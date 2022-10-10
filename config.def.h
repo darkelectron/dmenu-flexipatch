@@ -18,6 +18,10 @@ static int instant = 0;                     /* -n  option; if 1, selects matchin
 static int center = 1;                      /* -c  option; if 0, dmenu won't be centered on the screen */
 static int min_width = 500;                 /* minimum width when centered */
 #endif // CENTER_PATCH
+#if BARPADDING_PATCH
+static const int vertpad = 10;              /* vertical padding of bar */
+static const int sidepad = 10;              /* horizontal padding of bar */
+#endif // BARPADDING_PATCH
 #if RESTRICT_RETURN_PATCH
 static int restrict_return = 0;             /* -1 option; if 1, disables shift-return and ctrl-return */
 #endif // RESTRICT_RETURN_PATCH
@@ -54,6 +58,27 @@ static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
 	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+	#if BORDER_PATCH
+	[SchemeBorder] = { OPAQUE, OPAQUE, OPAQUE },
+	#endif // BORDER_PATCH
+	#if MORECOLOR_PATCH
+	[SchemeMid] = { OPAQUE, baralpha, borderalpha },
+	#endif // MORECOLOR_PATCH
+	#if HIGHLIGHT_PATCH || FUZZYHIGHLIGHT_PATCH
+	[SchemeSelHighlight] = { OPAQUE, baralpha, borderalpha },
+	[SchemeNormHighlight] = { OPAQUE, baralpha, borderalpha },
+	#endif // HIGHLIGHT_PATCH | FUZZYHIGHLIGHT_PATCH
+	#if HIGHPRIORITY_PATCH
+	[SchemeHp] = { OPAQUE, baralpha, borderalpha },
+	#endif // HIGHPRIORITY_PATCH
+	#if EMOJI_HIGHLIGHT_PATCH
+	[SchemeHover] = { OPAQUE, baralpha, borderalpha },
+	[SchemeGreen] = { OPAQUE, baralpha, borderalpha },
+	[SchemeRed] = { OPAQUE, baralpha, borderalpha },
+	[SchemeYellow] = { OPAQUE, baralpha, borderalpha },
+	[SchemeBlue] = { OPAQUE, baralpha, borderalpha },
+	[SchemePurple] = { OPAQUE, baralpha, borderalpha },
+	#endif // EMOJI_HIGHLIGHT_PATCH
 };
 #endif // ALPHA_PATCH
 
@@ -66,6 +91,9 @@ char *colors[][2] = {
 	[SchemeNorm] = { "#bbbbbb", "#222222" },
 	[SchemeSel]  = { "#eeeeee", "#005577" },
 	[SchemeOut]  = { "#000000", "#00ffff" },
+	#if BORDER_PATCH
+	[SchemeBorder] = { "#000000", "#005577" },
+	#endif // BORDER_PATCH
 	#if MORECOLOR_PATCH
 	[SchemeMid]  = { "#eeeeee", "#770000" },
 	#endif // MORECOLOR_PATCH
