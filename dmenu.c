@@ -113,8 +113,8 @@ static int separator_reverse;
 #endif // SEPARATOR_PATCH
 static int bh, mw, mh;
 #if XYW_PATCH
-static int dmx = 0, dmy = 0; /* put dmenu at these x and y offsets */
-static unsigned int dmw = 0; /* make dmenu this wide */
+static int dmx = 5, dmy = 5; /* put dmenu at these x and y offsets */
+static unsigned int dmw = 1910; /* make dmenu this wide */
 #endif // XYW_PATCH
 static int inputw = 0, promptw;
 #if PASSWORD_PATCH

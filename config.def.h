@@ -6,7 +6,7 @@ static int topbar = 1;                      /* -b  option; if 0, dmenu appears a
 static int opacity = 1;                     /* -o  option; if 0, then alpha is disabled */
 #endif // ALPHA_PATCH
 #if FUZZYMATCH_PATCH
-static int fuzzy = 1;                       /* -F  option; if 0, dmenu doesn't use fuzzy matching */
+static int fuzzy = 0;                       /* -F  option; if 0, dmenu doesn't use fuzzy matching */
 #endif // FUZZYMATCH_PATCH
 #if INCREMENTAL_PATCH
 static int incremental = 0;                 /* -r  option; if 1, outputs text each time a key is pressed */
@@ -114,13 +114,13 @@ char *colors[][2] = {
 	#endif // EMOJI_HIGHLIGHT_PATCH
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
-static unsigned int lines      = 0;
+static unsigned int lines      = 15;
 #if GRID_PATCH
 /* -g option; if nonzero, dmenu uses a grid comprised of columns and lines */
 static unsigned int columns    = 0;
 #endif // GRID_PATCH
 #if LINE_HEIGHT_PATCH
-static unsigned int lineheight = 0;         /* -h option; minimum height of a menu line     */
+static unsigned int lineheight = 25;         /* -h option; minimum height of a menu line     */
 static unsigned int min_lineheight = 8;
 #endif // LINE_HEIGHT_PATCH
 #if NAVHISTORY_PATCH
