@@ -9,7 +9,7 @@ static int opacity = 1;                     /* -o  option; if 0, then alpha is d
 static int caret_width = 2;                 /* -cw option; set default caret width */
 #endif // CARET_WIDTH_PATCH
 #if FUZZYMATCH_PATCH
-static int fuzzy = 0;                       /* -F  option; if 0, dmenu doesn't use fuzzy matching */
+static int fuzzy = 1;                       /* -F  option; if 0, dmenu doesn't use fuzzy matching */
 #endif // FUZZYMATCH_PATCH
 #if INCREMENTAL_PATCH
 static int incremental = 0;                 /* -r  option; if 1, outputs text each time a key is pressed */
