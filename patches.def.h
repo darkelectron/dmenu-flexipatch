@@ -91,7 +91,7 @@
  * https://tools.suckless.org/dmenu/patches/highlight/
  * https://tools.suckless.org/dmenu/patches/fuzzyhighlight/
  */
-#define HIGHLIGHT_PATCH 1
+#define HIGHLIGHT_PATCH 0
 
 /* This will automatically sort the search result so that high priority items are shown first.
  * https://tools.suckless.org/dmenu/patches/highpriority/
